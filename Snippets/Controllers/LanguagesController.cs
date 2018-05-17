@@ -10,108 +10,107 @@ using Snippets.Models;
 
 namespace Snippets.Controllers
 {
-    public class SnippetsController : Controller
+    public class LanguagesController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
-        // GET: Snippets
+        // GET: Languages
         public ActionResult Index()
         {
-            return View(db.Snippets.ToList());
+            return View(db.Languages.ToList());
         }
 
-        // GET: Snippets/Details/5
+        // GET: Languages/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Snippet snippet = db.Snippets.Find(id);
-            if (snippet == null)
+            Language language = db.Languages.Find(id);
+            if (language == null)
             {
                 return HttpNotFound();
             }
-            return View(snippet);
+            return View(language);
         }
 
-        // GET: Snippets/Create
+        // GET: Languages/Create
         public ActionResult Create()
         {
-            ViewBag.Languages = new SelectList(db.Languages.ToList(), "Id", "Name");
             return View();
         }
 
-        // POST: Snippets/Create
+        // POST: Languages/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Name,Code,LanguageId")] Snippet snippet)
+        public ActionResult Create([Bind(Include = "Id,Name")] Language language)
         {
             if (ModelState.IsValid)
             {
-                db.Snippets.Add(snippet);
+                db.Languages.Add(language);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(snippet);
+            return View(language);
         }
 
-        // GET: Snippets/Edit/5
+        // GET: Languages/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Snippet snippet = db.Snippets.Find(id);
-            if (snippet == null)
+            Language language = db.Languages.Find(id);
+            if (language == null)
             {
                 return HttpNotFound();
             }
-            return View(snippet);
+            return View(language);
         }
 
-        // POST: Snippets/Edit/5
+        // POST: Languages/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Name,Code,LanguageId")] Snippet snippet)
+        public ActionResult Edit([Bind(Include = "Id,Name")] Language language)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(snippet).State = EntityState.Modified;
+                db.Entry(language).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(snippet);
+            return View(language);
         }
 
-        // GET: Snippets/Delete/5
+        // GET: Languages/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Snippet snippet = db.Snippets.Find(id);
-            if (snippet == null)
+            Language language = db.Languages.Find(id);
+            if (language == null)
             {
                 return HttpNotFound();
             }
-            return View(snippet);
+            return View(language);
         }
 
-        // POST: Snippets/Delete/5
+        // POST: Languages/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Snippet snippet = db.Snippets.Find(id);
-            db.Snippets.Remove(snippet);
+            Language language = db.Languages.Find(id);
+            db.Languages.Remove(language);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

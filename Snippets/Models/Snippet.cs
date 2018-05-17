@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Snippets.Models
 {
@@ -14,11 +15,14 @@ namespace Snippets.Models
         [StringLength(200)]
         public string Name { get; set; }
         [Required]
-        [Display(Name = "Snipp Kodu")]
+        [Display(Name = "Kod")]
+        [DataType(DataType.MultilineText)]
         public string Code { get; set; }
-        [Required]
-        [Display(Name = "Snipp Dili")]
-        [StringLength(200)]
-        public string Language { get; set; }
+        [Display(Name = "Programlama Dili")]
+        public int LanguageId { get; set; }
+        [Display(Name = "Programlama Dili")]
+        [ForeignKey("LanguageId")]
+        public virtual Language Language { get; set; }
+        
     }
 }

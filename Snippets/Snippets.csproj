@@ -197,13 +197,28 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LanguagesController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\SnippetsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201805171459089_InitialCreate.cs" />
+    <Compile Include="Migrations\201805171459089_InitialCreate.Designer.cs">
+      <DependentUpon>201805171459089_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201805171507430_AddLanguage.cs" />
+    <Compile Include="Migrations\201805171507430_AddLanguage.Designer.cs">
+      <DependentUpon>201805171507430_AddLanguage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201805171511036_AddSnippetsCollection.cs" />
+    <Compile Include="Migrations\201805171511036_AddSnippetsCollection.Designer.cs">
+      <DependentUpon>201805171511036_AddSnippetsCollection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\Language.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Snippet.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -273,6 +288,11 @@
     <Content Include="Views\Snippets\Details.cshtml" />
     <Content Include="Views\Snippets\Edit.cshtml" />
     <Content Include="Views\Snippets\Index.cshtml" />
+    <Content Include="Views\Languages\Create.cshtml" />
+    <Content Include="Views\Languages\Delete.cshtml" />
+    <Content Include="Views\Languages\Details.cshtml" />
+    <Content Include="Views\Languages\Edit.cshtml" />
+    <Content Include="Views\Languages\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -289,6 +309,17 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201805171459089_InitialCreate.resx">
+      <DependentUpon>201805171459089_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805171507430_AddLanguage.resx">
+      <DependentUpon>201805171507430_AddLanguage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805171511036_AddSnippetsCollection.resx">
+      <DependentUpon>201805171511036_AddSnippetsCollection.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
