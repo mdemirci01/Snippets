@@ -55,14 +55,14 @@ namespace Snippets.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-
+            ViewBag.Languages = new SelectList(db.Languages.ToList(), "Id", "Name");
             return View(snippet);
         }
 
         // GET: Snippets/Edit/5
         public ActionResult Edit(int? id)
         {
-            ViewBag.Languages = new SelectList(db.Languages.ToList(), "Id", "Name");
+           
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -72,6 +72,7 @@ namespace Snippets.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.Languages = new SelectList(db.Languages.ToList(), "Id", "Name", snippet.LanguageId);
             return View(snippet);
         }
 
@@ -88,6 +89,7 @@ namespace Snippets.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+            ViewBag.Languages = new SelectList(db.Languages.ToList(), "Id", "Name", snippet.LanguageId);
             return View(snippet);
         }
 
