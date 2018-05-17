@@ -62,6 +62,7 @@ namespace Snippets.Controllers
         // GET: Snippets/Edit/5
         public ActionResult Edit(int? id)
         {
+            ViewBag.Languages = new SelectList(db.Languages.ToList(), "Id", "Name");
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
