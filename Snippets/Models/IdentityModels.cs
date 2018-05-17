@@ -29,5 +29,7 @@ namespace Snippets.Models
         {
             return new ApplicationDbContext();
         }
+
+        public System.Data.Entity.DbSet<Snippets.Models.Snippet> Snippets { get; set; }
     }
 }
