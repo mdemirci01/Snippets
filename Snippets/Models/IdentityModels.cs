@@ -24,7 +24,7 @@ namespace Snippets.Models
             : base("DefaultConnection", throwIfV1Schema: false)
         {
         }
-            public DbSet<Snippet> Snippets { get; set; }
+         
     
 
         public static ApplicationDbContext Create()
