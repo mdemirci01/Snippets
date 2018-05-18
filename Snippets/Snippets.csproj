@@ -196,6 +196,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CategoriesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LanguagesController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -218,6 +219,10 @@
     <Compile Include="Migrations\201805180703558_AddCategories.cs" />
     <Compile Include="Migrations\201805180703558_AddCategories.Designer.cs">
       <DependentUpon>201805180703558_AddCategories.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201805180718010_AddDbFix.cs" />
+    <Compile Include="Migrations\201805180718010_AddDbFix.Designer.cs">
+      <DependentUpon>201805180718010_AddDbFix.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -298,6 +303,11 @@
     <Content Include="Views\Languages\Details.cshtml" />
     <Content Include="Views\Languages\Edit.cshtml" />
     <Content Include="Views\Languages\Index.cshtml" />
+    <Content Include="Views\Categories\Create.cshtml" />
+    <Content Include="Views\Categories\Delete.cshtml" />
+    <Content Include="Views\Categories\Details.cshtml" />
+    <Content Include="Views\Categories\Edit.cshtml" />
+    <Content Include="Views\Categories\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -327,6 +337,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201805180703558_AddCategories.resx">
       <DependentUpon>201805180703558_AddCategories.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805180718010_AddDbFix.resx">
+      <DependentUpon>201805180718010_AddDbFix.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

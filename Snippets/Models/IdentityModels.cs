@@ -35,5 +35,7 @@ namespace Snippets.Models
         public System.Data.Entity.DbSet<Snippets.Models.Snippet> Snippets { get; set; }
 
         public System.Data.Entity.DbSet<Snippets.Models.Language> Languages { get; set; }
+
+        public System.Data.Entity.DbSet<Snippets.Models.Category> Categories { get; set; }
     }
 }
