@@ -215,8 +215,13 @@
     <Compile Include="Migrations\201805171511036_AddSnippetsCollection.Designer.cs">
       <DependentUpon>201805171511036_AddSnippetsCollection.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201805180703558_AddCategories.cs" />
+    <Compile Include="Migrations\201805180703558_AddCategories.Designer.cs">
+      <DependentUpon>201805180703558_AddCategories.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Category.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Language.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
@@ -319,6 +324,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201805171511036_AddSnippetsCollection.resx">
       <DependentUpon>201805171511036_AddSnippetsCollection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805180703558_AddCategories.resx">
+      <DependentUpon>201805180703558_AddCategories.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

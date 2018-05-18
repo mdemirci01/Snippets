@@ -9,6 +9,10 @@ namespace Snippets.Models
 {
     public class Snippet
     {
+        public Snippet()
+        {
+            Categories = new HashSet<Category>();
+        }
         public int Id { get; set; }
         [Required]
         [Display(Name = "Snipp Adı")]
@@ -23,6 +27,7 @@ namespace Snippets.Models
         [Display(Name = "Programlama Dili")]
         [ForeignKey("LanguageId")]
         public virtual Language Language { get; set; }
+        public virtual ICollection<Category> Categories { get; set; }
         
     }
 }
